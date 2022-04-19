@@ -46,10 +46,6 @@ form > * {
     color: white;
 }
 
-form > div:first-of-type { /* inc padding of 1st div*/
-    /* margin-bottom: 60px; */
-}
-
 label {
     float: left;
     margin: 40px auto auto 50px;
