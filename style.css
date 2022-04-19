@@ -1,0 +1,236 @@
+:root {
+    --background-colour: rgb(153, 153, 255);
+    --title-colour: rgb(59, 13, 59);
+}
+
+/* ------------------- page styling ----------------------- */
+body {
+    background-color: var(--background-colour);
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* x-axis */
+    align-items: center; /* y-axis */
+}
+
+h1 {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 60px;
+    position: relative;
+    top: 5px;
+    margin-bottom: 100px;
+    color: var(--title-colour);
+}
+
+#form-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* x-axis */
+    align-items: center; /* y-axis */
+    height: 540px;
+}
+
+form {
+    width: 790px;
+    border-style: solid;
+    border-radius: 30px;
+    border-width: 0px;
+    background-color: rgb(89, 76, 234);
+}
+
+form > * {
+    margin: 15px;
+    font-size: 1.8rem;
+    color: white;
+}
+
+form > div:first-of-type { /* inc padding of 1st div*/
+    /* margin-bottom: 60px; */
+}
+
+label {
+    float: left;
+    margin: 40px auto auto 50px;
+    width: 300px;
+    padding-right: 25px;
+}
+
+#button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+button, input[type="submit"] {
+    margin: 50px auto auto 240px;
+    cursor: pointer;
+    font-size: 1.8rem;
+}
+
+input[type="button"] {
+    cursor: pointer;
+}
+
+input {
+    float: left;
+    width: 280px;
+}
+
+#text-box-container {
+    display: flex;
+    justify-content: center;
+}
+
+#myRange {
+    display: flex;
+    align-items: center;
+    margin-top: 0px;
+}
+
+#text-box-container > input[type="text"] {
+    margin: 40px 0 0 0;
+    width: 400px;
+    font-size: 35px;
+    border-radius: 0;
+}
+
+#text-box-container > input[type="button"] {
+    margin: 42px 0 -2px 0;
+    width: 60px;
+    height: 55px;
+    border-radius: 0;
+    font-size: 20px;
+}
+
+#footer {
+    position: fixed;
+    width: 100%;
+    height: 40px;
+    left: 0;
+    bottom: 0;
+    background-color: var(--title-colour);
+}
+
+.centre-text {
+    position: absolute;
+    bottom: -7px;
+    left: 50%; /* relative to parent element */
+    transform: translate(-50%, 0); /* relative to element's width */
+    color: white;
+    
+}
+
+/* -------------------- slider ---------------------------- */
+
+.slider {
+    -webkit-appearance: none;
+    margin-top: 40px;
+    margin-bottom: 0px;
+    height: 5px;
+    background:rgb(31, 27, 27);
+    opacity: 0.8;
+    /* outline: none; */
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+    border-radius: 12px;
+    box-shadow: 0px 1px 10px 1px black;
+}
+
+.slider:hover { /* brightening effect on element */
+    opacity: 1;
+}
+
+/* Firefox Styling */
+.slider::-moz-range-thumb {
+    cursor:pointer;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+}
+
+/* Google Chrome styling */
+.slider::-webkit-slider-thumb {
+    cursor:pointer;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+
+#value {
+    margin-top: 40px;
+    padding-left: 20px;
+    font-size: 1.5rem;
+    width: 35px;
+    opacity: 0.7;
+    color: pink;
+}
+
+/* -------------------- toggle buttons ------------------- */
+
+input[type="checkbox"].toggle {
+    opacity: 0; /* make invisible */
+    position: absolute;
+    left: -9000px; /* remove checkbox from page */
+    top: -9000px;
+    cursor: pointer;
+}
+
+/* select label directly after checkbox */
+input[type="checkbox"].toggle + label {
+    position: relative;
+    display: flex;
+    align-items: center; /* positions knob at centre of background y-axis*/
+    cursor: pointer;
+    width: 4.15em; /* reduces clickable space to the right of toggle */
+    padding: 0; /* same purpose as above */
+}
+
+/* 'creating' toggle background to left of label */
+input[type="checkbox"].toggle + label::before {
+    content: '';
+    width: 2.5em;
+    height: 1em;
+    background-color: rgb(31, 27, 27);
+    border-radius: 1em;
+    margin-right: 0.25em;
+    transition: 200ms ease-in-out;
+}
+
+/* positioned on top of the ::before (rendered after ev else) */
+/* the knob of the toggle */
+input[type="checkbox"].toggle + label::after {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    content: '\2715';
+    color: black;
+    position: absolute;
+    font-size: .5em;
+    height: 0.9em;
+    left: 0.1em;
+    width: 1.8em;
+    height: 1.8em;
+    background-color: white;
+    border-radius: 1em;
+    transition: 200ms ease-in-out;
+}
+
+/* 'knob' when toggle checked */
+input[type="checkbox"].toggle:checked + label::after {
+    content: "\2713";
+    color: white;
+    transform: translateX(2.79em); /* move 1em along to left*/
+    background-color: var(--title-colour);
+}
+
+/* background when toggle checked */
+input[type="checkbox"].toggle:checked + label::before {
+    background-color: rgb(140, 99, 206);;
+}
+
+
+
+

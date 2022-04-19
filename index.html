@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Password Generator</title>
+        <link rel="stylesheet" type = "text/css" href="style.css">
+    </head>
+
+    <body>
+        <header>
+            <script src="https://kit.fontawesome.com/48100862b7.js" crossorigin="anonymous"></script>
+            <h1>Password Generator</h1>
+        </header>
+
+        <section>
+            <div id="form-container">
+                <form name="generate-password" action="#" onsubmit="createPassword(); return false">
+                    <div>
+                        <span id="myRange">
+                        <label for="myRange">Password Length</label>
+                         <!-- span tag ensures element on same line as text -->
+                            <input type="range" min="1" max="25" value="1" name = "myRange" class="slider" id="sliderInput" autocomplete="off">
+                            <div id="value"></div>
+                        </span>
+                    </div>
+    
+                    <div>
+                        <label for="letters-label">Letters</label>
+                        <input type="checkbox" name="letters" id="letters" class="toggle" autocomplete="off"> 
+                        <label for="letters" id="add1"></label> <!-- need label to connect ::before pseudoelement to -->
+                    </div>
+                    <br>
+                    <div>
+                        <label for="numbers-label">Numbers</label>
+                        <input type="checkbox" name="numbers" id="numbers" class="toggle" autocomplete="off"> 
+                        <label for="numbers" id="add2"></label>  <!--need label to connect ::before pseudoelement to -->
+                    </div>
+                    <br>
+                    <div>
+                        <label for="chars-label">Special Characters</label>
+                        <input type="checkbox" name="chars" id="chars" class="toggle" autocomplete="off"> 
+                        <label for="chars" id="add3"></label>  <!--need label to connect ::before pseudoelement to -->
+                    </div>
+                    <br>
+                    <div>
+                        <label for="caps-label">Capital Letters</label>
+                        <input type="checkbox" name="caps" id="caps" class="toggle" autocomplete="off"> 
+                        <label for="caps" id="add4"></label>  <!--need label to connect ::before pseudoelement to -->
+                    </div>
+                    <br>
+
+                    <div id="button-container">
+                        <input type="submit" name="submit" value="Generate"/>
+                    </div>
+                </form>
+            </div>
+
+            <div id="text-box-container">
+                <input type="text" id="password-field" autocomplete="off">
+                <input type="button" class="fa fa-copy" value="&#xf0c5;" onclick="copyText()">
+            </div>
+        </section>
+
+        <footer id="footer">
+            <p class="centre-text">Copyright &copy; Shivani</p>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>
